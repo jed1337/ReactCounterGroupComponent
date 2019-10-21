@@ -5,7 +5,7 @@ import CounterGroup from "./components/CounterGroup/CounterGroup";
 function App() {
   return (
     <div className="App">
-      <CounterGroup/>
+      <CounterGroup startingNumberOfCounters={3}/>
     </div>
   );
 }
