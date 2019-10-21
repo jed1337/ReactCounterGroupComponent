@@ -5,7 +5,7 @@ class CounterGroup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numberOfCounters: 2,
+            numberOfCounters: 0,
             input: 0,
             sum: 0
         }
@@ -16,6 +16,8 @@ class CounterGroup extends React.Component {
     }
 
     updateNumberOfCounters = () => {
+        this.setState({sum: 0});
+
         this.setState({numberOfCounters: this.state.input});
     };
 
@@ -33,7 +35,7 @@ class CounterGroup extends React.Component {
 
                 <div id="counters">
                     {[...Array(this.state.numberOfCounters)].map((x, i) =>
-                        <Counter parentCallBack = {this.callBackFunction}/>
+                        <Counter parentCallBack = {this.callBackFunction} startingNumber={0}/>
                     )}
                 </div>
             </div>

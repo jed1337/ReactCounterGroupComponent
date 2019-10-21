@@ -5,7 +5,7 @@ class Counter extends React.Component {
         super(props);
 
         this.state = {
-            number: 0
+            number: this.props.startingNumber
         }
     }
 
