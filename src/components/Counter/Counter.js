@@ -3,19 +3,23 @@ import React from 'react'
 class Counter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {number: 0}
+
+        this.state = {
+            number: 0
+        }
     }
 
     incrementNumber = () => {
         this.setState({number: this.state.number + 1});
+        this.props.parentCallBack(1);
     };
 
     decrementNumber = () => {
         this.setState({number: this.state.number - 1});
+        this.props.parentCallBack(-1);
     };
 
     render() {
-
         return (
             <div>
                 <h1>{this.state.number}</h1>
